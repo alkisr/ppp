@@ -28,7 +28,7 @@ do local _ = {
     "short_link",
     "redis",
     "list1",
-    "help",
+    "helpen",
     "list",
     "list3",
     "writer",
@@ -65,7 +65,7 @@ do local _ = {
     "echo",
     "send",
     "linkpv",
-    "sudolist"
+    "replay"
 
   },
   help_text = "",
@@ -75,10 +75,9 @@ do local _ = {
     data = "data/moderation.json"
   },
   sudo_users = {
-    124406196,
-    197920376,
-    224372882
-  }
-}
+    286670331,
+    
+    
+  }}
 return _
 end
