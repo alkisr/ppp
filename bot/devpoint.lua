@@ -245,7 +245,7 @@ function create_config( )
     "lock_emoji",
     "lock_english",
     "lock_badword",
-    "lock_fwd",
+    "lock(1)",
     "lock_join",
     "lock_media",
     "lock_reply",
