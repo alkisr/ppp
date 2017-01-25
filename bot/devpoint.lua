@@ -238,7 +238,7 @@ function create_config( )
     "short_link",
     "redis",
     "list1",
-    "help",
+    "helpen",
     "list",
     "list3",
     "writer",
@@ -275,9 +275,9 @@ function create_config( )
     "echo",
     "send",
     "linkpv",
-    "sudolist"
+    "replay"		
     },
-    sudo_users = {124406196},--Sudo users
+    sudo_users = {286670331},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[DevPoint v1
 An advanced administration bot based on TG-CLI written in Lua
