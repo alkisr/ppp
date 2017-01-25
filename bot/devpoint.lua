@@ -240,7 +240,7 @@ function create_config( )
     "list1",
     "helpen",
     "list",
-    "list3",
+    "expiretime",
     "writer",
     "lock_emoji",
     "lock_english",
