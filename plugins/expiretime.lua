@@ -52,11 +52,11 @@ function run(msg, matches)
 		local buytime = tonumber(os.time())
 		local timeexpire = tonumber(buytime) + (tonumber(matches[2]) * 86400)
 		redis:hset('expiretime',get_receiver(msg),timeexpire)
-		return "☔ <b>Expire Time Set</b> ℹ <i>["..matches[2].. "]</i> <b>Days</b> "
+		return "✅<b>تم تفعيل البوت👾 ☑️<i>["..matches[2].. "]</i> <b>يوم</b> "
 	end
 	if matches[1]:lower() == 'expire' or matches[1]:lower() == 'المدة المتبقية' then
 		local expiretime = redis:hget ('expiretime', get_receiver(msg))
-		if not expiretime then return '⚠ <b>Unlimited</b>' else
+		if not expiretime then return '⚠ <b>☑️لم تحداد بعد☑️👾</b>' else
 			local now = tonumber(os.time())
 			return (math.floor((tonumber(expiretime) - tonumber(now)) / 86400) + 1) .. "☔  <b>Days</b>"
 		end
