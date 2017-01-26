@@ -13,7 +13,7 @@ if redis:get(link) and not is_momod(msg) and link2 then
     send_large_msg(get_receiver(msg), '#تنبيه ممنوع ارسال روابط 🔗 في المجموعة 💡\n👤معرف المستخدم :: @'..msg.from.username or '')
 elseif redis:get(fwd) and not is_momod(msg) and msg.fwd_from then
 delete_msg(msg.id, ok_cb, true)
-send_large_msg(get_receiver(msg), '#تنبيه ممنوع 🔒 عمل توجيه🔁 داخل المجموعة💡\n👤معرف المستخدم :: @'..msg.from.username or '')
+send_large_msg(get_receiver(msg), 'اهلا ☺~ ' ..msg.from.first_name..'\n المجموعة الان في وضع صامت🔕❎ \n👤<b>username </b>: @'..msg.from.username or '')
 elseif redis:get(chat) and not is_momod(msg) and msg.to.type == 'channel' then
 delete_msg(msg.id, ok_cb, true)
 send_large_msg(get_receiver(msg), '#تنبيه ممنوع الكلام🔕 المجموعة في وضع الصامت🔒\n👤معرف المستخدم :: @'..msg.from.username or '')
@@ -64,7 +64,7 @@ end
 if is_momod(msg) and matches[1]== 'warn' and matches[2]== 'all' then
     local chat = 'chat:'..msg.to.id 
     redis:set(chat, true)
-    local text = 'تم تفعيل قفل المجموعة 🔒 بالتحذير 💡'
+    local text = '<b> تم وضع #الصامت للمجموعة🔕 لمدة (360) دقيقة⏳ بعدها يمكنكم الارسال✅</b>'
     return reply_msg(msg.id, text, ok_cb, false)
     
  elseif is_momod(msg) and matches[1]== 'nwarn' and matches[2]== 'all' then
