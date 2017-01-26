@@ -4,7 +4,7 @@ if matches[1] == "chat_add_user" then
  local add = "اهلا بك☺~ منور (ة) /n الاسم: " ..msg.action.user.first_name.."\n".."🎗 معرفك : @"..(msg.action.user.username or " " ).."\n"
 return add 
 elseif matches[1] == "chat_add_user_link" then
- local lin = "🌹 أهلاً بك عزيزي 🌝❤️\n🎗 اسمك : " ..msg.from.first_name.."\n".."🎗 معرفك : @"..(msg.from.username or "" ).."\n"
+ local lin = "اهلا ☺~ منور)ة( \n⌘\n الاسم: " ..msg.from.first_name.."\n".."\n".."👤<b>username</b> : @"..(msg.from.username or "" ).."\n"
 return lin
 end
 if matches[1] == "chat_del_user" then
