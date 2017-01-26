@@ -10,13 +10,13 @@ local inline = 'inline:'..msg.to.id
 local link2 = msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm]%.[Mm][Ee]/") or msg.text:match("[Tt][Ll][Gg][Rr][Mm]%.[Mm][Ee]/") or msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm]%.[Oo][Rr][Gg]") or msg.text:match("[Gg][Oo][Oo]%.[Gg][Li]/") or msg.text:match("[Aa][Dd][Ff]%.[Ll][Yy]/") or msg.text:match("[Bb][Ii][Tt]%.[Ll][Yy]") or msg.text:match("[Cc][Ff]%.[Ll][Yy]/") or msg.text:match("[Bb][Vv]%.[Vv][Cc]/") or msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm]%.[Mm][Ee]")
 if redis:get(link) and not is_momod(msg) and link2 then
     delete_msg(msg.id, ok_cb, true)
-    send_large_msg(get_receiver(msg), '#تنبيه ممنوع ارسال روابط 🔗 في المجموعة 💡\n👤معرف المستخدم :: @'..msg.from.username or '')
+    send_large_msg(get_receiver(msg), 'اهلا ☺~' ..msg.from.first_name..'\n يمنع نشر (قنوات - اعلانات - روابط - مواقع) التزم بالقوانين📵⛔️\n👤<b>username </b>: @'..msg.from.username or '')
 elseif redis:get(fwd) and not is_momod(msg) and msg.fwd_from then
 delete_msg(msg.id, ok_cb, true)
-send_large_msg(get_receiver(msg), 'اهلا ☺~ ' ..msg.from.first_name..'\n المجموعة الان في وضع صامت🔕❎ \n👤<b>username </b>: @'..msg.from.username or '')
+send_large_msg(get_receiver(msg), 'اهلا ☺~ ' ..msg.from.first_name..'\n يمنع اعادة التوجيه هنا التزم بالقوانين المجموعة 🔁⛔️\n👤<b>username </b>: @'..msg.from.username or '')
 elseif redis:get(chat) and not is_momod(msg) and msg.to.type == 'channel' then
 delete_msg(msg.id, ok_cb, true)
-send_large_msg(get_receiver(msg), '#تنبيه ممنوع الكلام🔕 المجموعة في وضع الصامت🔒\n👤معرف المستخدم :: @'..msg.from.username or '')
+send_large_msg(get_receiver(msg), 'اهلا ☺ ~ ' ..msg.from.first_name..'\n المجموعة الان في وضع صامت🔕❎\n👤<b>username</b>: @'..msg.from.username or '')
 elseif redis:get(photo) and not is_momod(msg) and msg.media and msg.media.type == 'photo' then
 delete_msg(msg.id, ok_cb, true)
 send_large_msg(get_receiver(msg), '#تنبيه ممنوع ارسال الصور 🖼 في المجموعة 💡\n👤معرف المستخدم :: @'..msg.from.username or '')
@@ -25,7 +25,7 @@ delete_msg(msg.id, ok_cb, true)
 send_large_msg(get_receiver(msg), '#تنبيه ممنوع ارسال الصوتيات 🔇 في المجموعة 💡\n👤معرف المستخدم :: @'..msg.from.username or '')
 elseif redis:get(inline) and not is_momod(msg) and msg.text == '[unsupported]' then
 delete_msg(msg.id, ok_cb, true)
-send_large_msg(get_receiver(msg), '#تنبيه ممنوع ارسال الكيبورد الشفاف ⌨ في المجموعة 💡\n👤معرف المستخدم :: @'..msg.from.username or '')
+send_large_msg(get_receiver(msg), '\n👤معرف المستخدم :: @'..msg.from.username or '')
 return "done"
        end
    return msg
