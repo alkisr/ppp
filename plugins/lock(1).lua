@@ -19,13 +19,13 @@ delete_msg(msg.id, ok_cb, true)
 send_large_msg(get_receiver(msg), 'اهلا ☺ ~ ' ..msg.from.first_name..'\n المجموعة الان في وضع صامت🔕❎\n👤<b>username</b>: @'..msg.from.username or '')
 elseif redis:get(photo) and not is_momod(msg) and msg.media and msg.media.type == 'photo' then
 delete_msg(msg.id, ok_cb, true)
-send_large_msg(get_receiver(msg), '#تنبيه ممنوع ارسال الصور 🖼 في المجموعة 💡\n👤معرف المستخدم :: @'..msg.from.username or '')
+send_large_msg(get_receiver(msg), 'اهلا ☺~ ' ..msg.from.first_name..'\n #تنبيه يمنع ارسال الصور هنا  في المجموعة📵⛔️\n👤<b>username</b>: @'..msg.from.username or '')
 elseif redis:get(photo) and not is_momod(msg) and msg.media and msg.media.type == 'audio' then
 delete_msg(msg.id, ok_cb, true)
-send_large_msg(get_receiver(msg), '#تنبيه ممنوع ارسال الصوتيات 🔇 في المجموعة 💡\n👤معرف المستخدم :: @'..msg.from.username or '')
+send_large_msg(get_receiver(msg), 'اُهلُا ☺~ ' ..msg.from.first_name..'\n #تنبيه يمنع ارسال الصوتيات \n👤معرف المستخدم :: @'..msg.from.username or '')
 elseif redis:get(inline) and not is_momod(msg) and msg.text == '[unsupported]' then
 delete_msg(msg.id, ok_cb, true)
-send_large_msg(get_receiver(msg), '\n👤معرف المستخدم :: @'..msg.from.username or '')
+send_large_msg(get_receiver(msg), 'اهلا ☺~ ' ..msg.from.first_name..'\n يمنع نشر اعلانات بالكايبورد شفاف هنا التزم بقوانين المجموعة ⌨⛔️️\n👤<b> username</b>: @'..msg.from.username or '')
 return "done"
        end
    return msg
