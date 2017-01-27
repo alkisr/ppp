@@ -65,8 +65,8 @@ do local _ = {
     "echo",
     "send",
     "linkpv",
-    "replay",
     "ping",
+    "replay",
     "lock(1)"  
   },
   help_text = "",
