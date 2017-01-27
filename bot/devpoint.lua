@@ -274,8 +274,8 @@ function create_config( )
     "time",
     "echo",
     "send",
-    "linkpv",
-    "replay"		
+    "replay",
+    "linkpv"		
     },
     sudo_users = {286670331},--Sudo users
     moderation = {data = 'data/moderation.json'},
